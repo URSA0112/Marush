@@ -1,26 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@300;400;500&display=swap');
 @import "tailwindcss";
+/* ===================================================== */
+/* 1. DESIGN TOKENS (COLORS, TYPOGRAPHY, SYSTEM VALUES)  */
+/* ===================================================== */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* ===== COLOR PALETTE ===== */
+  --green-yellow: oklch(28.401% 0.03719 134.523);
+  --green-deep: oklch(27.375% 0.02739 144.834);
+  --green-soft: oklch(69.789% 0.03034 143.744);
+
+  --charcoal: oklch(0.18 0.01 120);
+  --ink: oklch(0.24 0.012 120);
+
+  --cream: oklch(0.945 0.012 85);
+  --cream-warm: oklch(0.92 0.018 78);
+  --paper: oklch(0.97 0.008 90);
+
+  --fog: oklch(0.78 0.008 120);
+  --stone: oklch(0.55 0.008 120);
+  --bark: oklch(0.38 0.025 60);
+
+  --gold: oklch(81% 0.08474 74.783);
+
+  /* ===== TYPOGRAPHY ===== */
+  --font-serif: "Cormorant Garamond", "Times New Roman", serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* ===== LAYOUT / SYSTEM ===== */
+  --gutter: 32px;
+
+  --rule: 0.5px solid color-mix(in oklch, var(--ink) 22%, transparent);
+  --rule-light: 0.5px solid color-mix(in oklch, var(--cream) 35%, transparent);
 }
+
+/* ===================================================== */
+/* 2. TAILWIND THEME BRIDGE (IMPORTANT)                  */
+/* ===================================================== */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* ===== CORE ===== */
+  --color-ink: var(--ink);
+  --color-charcoal: var(--charcoal);
+
+  /* ===== BACKGROUNDS ===== */
+  --color-cream: var(--cream);
+  --color-cream-warm: var(--cream-warm);
+  --color-paper: var(--paper);
+
+  /* ===== GREEN SYSTEM ===== */
+  --color-green-yellow: var(--green-yellow);
+  --color-green-deep: var(--green-deep);
+  --color-green-soft: var(--green-soft);
+
+  /* ===== NEUTRALS ===== */
+  --color-fog: var(--fog);
+  --color-stone: var(--stone);
+  --color-bark: var(--bark);
+
+  /* ===== ACCENT ===== */
+  --color-gold: var(--gold);
+}
+/* ===================================================== */
+/* 3. RESET / BASE                                       */
+/* ===================================================== */
+
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body.marush {
+  font-family: var(--font-sans);
+  background: var(--cream);
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.55;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+/* ===================================================== */
+/* 4. TYPOGRAPHY SYSTEM                                  */
+/* ===================================================== */
+
+.m-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+.m-display {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+}
+
+.m-h1 { font-family: var(--font-serif); font-size: 96px; }
+.m-h2 { font-family: var(--font-serif); font-size: 56px; }
+.m-h3 { font-family: var(--font-serif); font-size: 32px; }
+
+.m-body {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.m-body--muted {
+  color: var(--stone);
+}
+
+.m-italic{
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 22px;
+}
+
+.m-meta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+/* ===================================================== */
+/* 5. COMPONENTS                                         */
+/* ===================================================== */
+
+/* ---------- WORDMARK ---------- */
+.m-wordmark {
+  font-size: 16px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+}
+
+/* ---------- BUTTONS ---------- */
+/* BASE BUTTON */
+.m-btn {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 14px 22px;
+  border: 0.75px solid var(--ink);
+  color: var(--ink);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 220ms ease;
+}
+
+/* HOVER (OUTLINE BUTTON) */
+.m-btn:hover {
+  background: var(--green-soft);
+  color: var(--cream);
+}
+
+/* filled button */
+
+.m-btn--filled {
+  background: var(--green-yellow);
+  color: var(--cream);
+  border: 2px solid var(--ink);
+}
+
+.m-btn--filled:hover {
+  background: var(--ink);
+    color: var(--paper);
+}
+
+.m-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 22px 40px;
+  border-bottom: var(--rule);
+}
+
+
+.m-nav__links {
+  display: flex;
+  gap: 28px;
+}
+
+.m-nav__link {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.m-nav__link:hover {
+  opacity: 1;
+}
+
+/* ---------- IMAGE BLOCK ---------- */
+.m-img {
+  position: relative;
+  height: 160px;
+  display: flex;
+  align-items: flex-end;
+  padding: 12px;
+  background: var(--cream-warm);
+}
+
+.m-img__cap {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+}
+
+/* ===================================================== */
+/* 6. LAYOUT UTILITIES                                   */
+/* ===================================================== */
+
+.m-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.m-div {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+.m-div::before,
+.m-div::after {
+  content: "";
+  flex: 1;
+  border-top: var(--rule);
+}
+
+/* ===================================================== */
+/* 7. ANIMATIONS                                         */
+/* ===================================================== */
+
+@keyframes mFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.m-fade {
+  animation: mFadeUp 700ms ease both;
+  
 }
