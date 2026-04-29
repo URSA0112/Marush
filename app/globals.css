@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@300;400;500&display=swap");
 @import "tailwindcss";
 /* ===================================================== */
 /* 1. DESIGN TOKENS (COLORS, TYPOGRAPHY, SYSTEM VALUES)  */
@@ -70,7 +70,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -105,9 +106,18 @@ body.marush {
   line-height: 0.95;
 }
 
-.m-h1 { font-family: var(--font-serif); font-size: 96px; }
-.m-h2 { font-family: var(--font-serif); font-size: 56px; }
-.m-h3 { font-family: var(--font-serif); font-size: 32px; }
+.m-h1 {
+  font-family: var(--font-serif);
+  font-size: 96px;
+}
+.m-h2 {
+  font-family: var(--font-serif);
+  font-size: 56px;
+}
+.m-h3 {
+  font-family: var(--font-serif);
+  font-size: 32px;
+}
 
 .m-body {
   font-size: 14px;
@@ -118,7 +128,7 @@ body.marush {
   color: var(--stone);
 }
 
-.m-italic{
+.m-italic {
   font-family: var(--font-serif);
   font-style: italic;
   font-size: 22px;
@@ -158,32 +168,12 @@ body.marush {
   transition: all 220ms ease;
 }
 
-/* HOVER (OUTLINE BUTTON) */
-.m-btn:hover {
-  background: var(--green-soft);
-  color: var(--cream);
-}
-
-/* filled button */
-
-.m-btn--filled {
-  background: var(--green-yellow);
-  color: var(--cream);
-  border: 2px solid var(--ink);
-}
-
-.m-btn--filled:hover {
-  background: var(--ink);
-    color: var(--paper);
-}
-
 .m-nav {
   display: flex;
   justify-content: space-between;
   padding: 22px 40px;
   border-bottom: var(--rule);
 }
-
 
 .m-nav__links {
   display: flex;
@@ -199,6 +189,7 @@ body.marush {
 
 .m-nav__link:hover {
   opacity: 1;
+  cursor: pointer;
 }
 
 /* ---------- IMAGE BLOCK ---------- */
@@ -210,13 +201,6 @@ body.marush {
   padding: 12px;
   background: var(--cream-warm);
 }
-
-.m-img__cap {
-  font-family: var(--font-mono);
-  font-size: 9px;
-  text-transform: uppercase;
-}
-
 /* ===================================================== */
 /* 6. LAYOUT UTILITIES                                   */
 /* ===================================================== */
@@ -260,5 +244,4 @@ body.marush {
 
 .m-fade {
   animation: mFadeUp 700ms ease both;
-  
 }

@@ -1,3 +1,6 @@
+import AnimatedButton from "./button";
+
+
 export default function DevSystem() {
   const colors = [
     { name: "ink", className: "bg-ink text-cream", var: "--ink" },
@@ -6,7 +9,7 @@ export default function DevSystem() {
       className: "bg-charcoal text-cream",
       var: "--charcoal",
     },
-    
+
     {
       name: "black",
       className: "bg-black text-cream",
@@ -183,6 +186,7 @@ export default function DevSystem() {
             </p>
             <button className="m-btn">
               View <span className="arr">→</span>
+
             </button>
           </div>
 
@@ -203,12 +207,22 @@ export default function DevSystem() {
             <p className="m-body m-body--muted">
               Seasonal cuisine and curated taste.
             </p>
-            <button className="m-btn bg-amber-50/80 ">
-              Explore <span className="arr">→</span>
-            </button>
+            <AnimatedButton buttonClassName="bg-ink">Explore <span className="arr">→</span></AnimatedButton>
           </div>
         </div>
+        <div className="bg-green-yellow p-10 ">
+          <p className="m-img-cap">img cap</p>
+          <img src="next.svg" alt="" className="m-img" />
+          <button className="btn btn-square">
+            <span className="loading loading-spinner"></span>
+          </button>
+
+
+        </div>
+
       </section>
+
+
     </main>
   );
 }
