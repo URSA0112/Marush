@@ -1,4 +1,4 @@
-import AnimatedButton from "@/components/button";
+import AnimatedButton from "@/app/components/Reusable/button";
 
 
 

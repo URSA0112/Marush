@@ -1,11 +1,12 @@
 import Link from "next/link";
+import Devpage from "./devpage";
+import Navigation from "./components/Navigation/navigation";
 
 export default function Page() {
   return (
-    <div className="flex w-full justify-center p-2">
-      <Link href="/design" className="m-btn">
-        <span className="arr">→</span> Design page
-      </Link>
-    </div>
+    <>
+      <Devpage></Devpage>
+      <Navigation />
+    </>
   );
 }

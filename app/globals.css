@@ -175,19 +175,19 @@ body.marush {
   border-bottom: var(--rule);
 }
 
-.m-nav__links {
+.m-nav-links {
   display: flex;
   gap: 28px;
 }
 
-.m-nav__link {
+.m-nav-link {
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   opacity: 0.7;
 }
 
-.m-nav__link:hover {
+.m-nav-link:hover {
   opacity: 1;
   cursor: pointer;
 }
