@@ -63,6 +63,21 @@
   --color-gold: var(--gold);
 }
 /* ===================================================== */
+/* 2b. DARK MODE OVERRIDES                               */
+/* ===================================================== */
+
+html.dark {
+  --cream: oklch(0.15 0.01 120);
+  --cream-warm: oklch(0.19 0.012 120);
+  --paper: oklch(0.17 0.008 120);
+  --ink: oklch(0.92 0.010 85);
+  --charcoal: oklch(0.10 0.01 120);
+  --stone: oklch(0.58 0.008 120);
+  --fog: oklch(0.30 0.008 120);
+  --bark: oklch(0.62 0.025 60);
+}
+
+/* ===================================================== */
 /* 3. RESET / BASE                                       */
 /* ===================================================== */
 
@@ -153,7 +168,7 @@ body.marush {
 }
 
 /* ---------- BUTTONS ---------- */
-/* BASE BUTTON */
+
 .m-btn {
   font-size: 11px;
   letter-spacing: 0.16em;
@@ -167,11 +182,23 @@ body.marush {
   gap: 10px;
   transition: all 220ms ease;
 }
-
+/* ---------- NAVIGATION ---------- */
 .m-nav {
   display: flex;
   justify-content: space-between;
   padding: 22px 40px;
+  border-bottom: var(--rule);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+ backdrop-filter: blur(12px);
+
+  background: color-mix(
+    in oklch,
+    var(--green-yellow) 65%,
+    transparent
+  );
+
   border-bottom: var(--rule);
 }
 
@@ -191,7 +218,9 @@ body.marush {
   opacity: 1;
   cursor: pointer;
 }
-
+[id] {
+  scroll-margin-top: 58px; /*space for nav*/
+}
 /* ---------- IMAGE BLOCK ---------- */
 .m-img {
   position: relative;
@@ -244,4 +273,24 @@ body.marush {
 
 .m-fade {
   animation: mFadeUp 700ms ease both;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
 }
