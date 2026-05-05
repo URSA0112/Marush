@@ -29,7 +29,7 @@ interface DateRange {
 // ─── Constants ────────────────────────────────────────────────────────────────
 
 const DAYS = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
-
+const pricePerDay = 250;
 const tw = {
   // Typography scales
   eyebrow:    "text-[10px] uppercase tracking-[0.22em]",
@@ -84,7 +84,7 @@ function DateSlot({
 }) {
   return (
     <div className={cn("flex-1", align === "right" && "text-right")}>
-      <p className={cn(tw.label, tw.stone)}>{label}</p>
+      <p className={cn(tw.label, tw.stone , "text-gold")}>{label}</p>
       <p className={cn("text-2xl italic", tw.cream)}>{value ?? "—"}</p>
     </div>
   );
@@ -158,7 +158,7 @@ export default function DateRangePicker() {
 
   return (
     <div
-      className="w-80 rounded-2xl border border-[var(--border)] bg-[color-mix(in_oklch,var(--green-yellow)_75%,transparent)] overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.55)]"
+      className="w-80 rounded-2xl border border-[var(--border)] bg-[color-mix(in_oklch,var(--green-yellow)_55%,transparent)] overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.55)]"
       onMouseLeave={() => setHoverDate(null)}
     >
 
@@ -175,7 +175,9 @@ export default function DateRangePicker() {
           />
           <div className="px-3 text-center shrink-0">
             {nights > 0 ? (
-              <span className={cn("text-[11px]", tw.gold)}>{nights}n</span>
+              <span className={cn("text-[11px] ", tw.gold)}>{nights}
+              <p className="text-[9px]"> {nights === 1 ? "night": "nights" }</p>
+              </span>
             ) : (
               <span className={cn(tw.stone, "opacity-50")}>→</span>
             )}
@@ -189,7 +191,7 @@ export default function DateRangePicker() {
       </div>
 
       {/* ── Month nav ── */}
-      <div className={cn("flex justify-between items-center px-5 py-4", tw.borderSubtle)}>
+      <div className={cn("flex justify-between items-center px-5 py-4 ", tw.borderSubtle)}>
         <NavButton
           label="Previous month"
           onClick={() => setCurrentMonth(subMonths(currentMonth, 1))}
@@ -215,7 +217,7 @@ export default function DateRangePicker() {
         {/* Day labels */}
         <div className="grid grid-cols-7 mb-1">
           {DAYS.map((d) => (
-            <div key={d} className={cn(tw.label, tw.stone, "text-center opacity-60")}>
+            <div key={d} className={cn(tw.label, tw.stone, "text-center opacity-100 text-gold")}>
               {d}
             </div>
           ))}
@@ -245,7 +247,7 @@ export default function DateRangePicker() {
                 onKeyDown={(e) => e.key === "Enter" && handleDateClick(day)}
                 className={cn(
                   "aspect-square relative flex items-center justify-center",
-                  past       ? "opacity-20 pointer-events-none" : "cursor-pointer",
+                  past       ? "opacity-50 text-gold pointer-events-none " : "cursor-pointer",
                   !sameMonth && "opacity-20",
                 )}
               >
@@ -270,8 +272,8 @@ export default function DateRangePicker() {
 
       {/* ── Footer ── */}
       <div className="flex justify-between items-center px-5 py-4 border-t border-white/5  ">
-        <span className={cn("text-xs text-ink dark:text-cream")}>
-          {nights > 0 && `${nights} night${nights !== 1 ? "s" : ""} · $${(nights * 480).toLocaleString()}`}
+        <span className={cn("text-xs text-gold")}>
+          {nights > 0 && `${nights} night${nights !== 1 ? "s" : ""} · $${(nights * pricePerDay).toLocaleString()}`}
         </span>
 
         <button
