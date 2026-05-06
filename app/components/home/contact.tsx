@@ -39,7 +39,7 @@ export default function Contact({ dict }: { dict: Dict['contact'] }) {
               key={item.label} href={item.href} target="_blank" rel="noopener noreferrer"
               initial={{ opacity: 0, y: 22 }} animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.15 + i * 0.08, duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-              className="group flex flex-col items-center justify-center text-center p-8 border border-gold/12 bg-paper hover:border-gold/30 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] transition-all duration-300"
+              className="group flex flex-col items-center justify-center text-center p-8 border border-gold/12 bg-paper hover:border-gold/30 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] rounded-sm transition-all duration-300"
             >
               <span className="text-2xl mb-3">{item.icon}</span>
               <span className="text-[0.58rem] tracking-[0.28em] uppercase text-gold mb-2">{item.label}</span>

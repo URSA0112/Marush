@@ -55,7 +55,7 @@ export default function Location({ dict }: { dict: Dict['location'] }) {
           <a
             href="https://maps.app.goo.gl/wYLbJJjbLurxQxaQ7"
             target="_blank" rel="noopener noreferrer"
-            className="inline-block text-[0.65rem] tracking-[0.3em] uppercase px-8 py-3.5 border border-gold/55 text-gold hover:bg-gold hover:text-charcoal hover:scale-[1.03] hover:shadow-[0_0_24px_rgba(198,164,108,0.25)] transition-all duration-300"
+            className="inline-block text-[0.65rem] tracking-[0.3em] uppercase px-8 py-3.5 border border-gold/55 text-gold hover:bg-gold hover:text-charcoal hover:scale-[1.03] hover:shadow-[0_0_24px_rgba(198,164,108,0.25)] rounded-sm transition-all duration-300"
           >
             {dict.map_btn}
           </a>

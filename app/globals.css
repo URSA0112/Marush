@@ -92,6 +92,7 @@ body {
 }
 
 body.marush {
+  position: relative;
   font-family: var(--font-sans);
   background: var(--cream);
   color: var(--ink);

@@ -22,11 +22,7 @@ export default function About({ dict }: { dict: Dict['about'] }) {
             <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 to-transparent" />
             <span className="absolute bottom-3 left-4 text-[0.52rem] tracking-[0.22em] uppercase text-gold/55">{dict.caption1}</span>
           </div>
-          <div className="absolute top-0 left-0 w-[54%] h-[235px] overflow-hidden border border-gold/12">
-            <img src="/1.png" alt="Resort overview" className="w-full h-full object-cover opacity-85" />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-charcoal/55" />
-            <span className="absolute bottom-3 left-3 text-[0.52rem] tracking-[0.22em] uppercase text-gold/55">{dict.caption2}</span>
-          </div>
+      
           <div className="absolute top-[238px] left-[54%] w-px h-20 bg-gradient-to-b from-gold/60 to-transparent" />
           <div className="absolute bottom-6 left-0 text-[0.55rem] tracking-[0.35em] uppercase text-gold/40">{dict.tagline}</div>
         </motion.div>

@@ -15,8 +15,6 @@ export default async function CareersPage({ params }: { params: Promise<{ lang: 
 
   return (
     <>
-      <Navigation lang={lang} />
-
       {/* Hero */}
       <section className="relative flex items-center justify-center overflow-hidden min-h-screen">
         <div className="absolute inset-0 z-0">

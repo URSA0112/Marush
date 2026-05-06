@@ -1,7 +1,6 @@
 'use client';
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import BookingButton from './bookingBtn';
 import type { Dict } from '../../[lang]/dictionaries';
 
 type AmenityKey = keyof Dict['accommodations']['amenities'];
@@ -33,7 +32,7 @@ const roomData = [
   },
 ];
 
-export default function Accommodation({ dict, bookingDict }: { dict: Dict['accommodations']; bookingDict: Dict['booking'] }) {
+export default function Accommodation({ dict, lang }: { dict: Dict['accommodations']; lang: string }) {
   const ref    = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
@@ -79,7 +78,7 @@ export default function Accommodation({ dict, bookingDict }: { dict: Dict['accom
                 initial={{ opacity: 0, y: 28 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.1 + i * 0.1, duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-                className={`relative flex flex-col h-full p-7 border border-gold/15 transition-all duration-300 ${
+                className={`relative flex flex-col h-full p-7 border border-gold/15 rounded-sm transition-all duration-300 ${
                   room.featured
                     ? 'bg-paper shadow-[0_0_40px_rgba(198,164,108,0.1)]'
                     : 'bg-paper hover:border-gold/30'
@@ -130,17 +129,25 @@ export default function Accommodation({ dict, bookingDict }: { dict: Dict['accom
                     <span className="flex items-center justify-center w-4 h-4 border border-gold/20 rounded-full text-[8px]">✓</span>
                     {dict.breakfast_included}
                   </div>
-                  <BookingButton
-                    roomName={roomName} roomType={roomType} size={room.size}
-                    price={room.price} priceNum={room.priceNum} usd={room.usd}
-                    amenities={amenities} maxGuests={room.maxGuests}
-                    dict={bookingDict}
-                  />
                 </div>
               </motion.div>
             );
           })}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.55, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="flex justify-center mt-12"
+        >
+          <a
+            href={`/${lang}/booking`}
+            className="px-14 py-4 bg-gold text-black text-[0.68rem] tracking-[0.32em] uppercase font-medium hover:brightness-110 hover:scale-[1.03] hover:shadow-[0_0_32px_rgba(198,164,108,0.45)] rounded-sm transition-all duration-300"
+          >
+            Make Reservation
+          </a>
+        </motion.div>
       </div>
     </section>
   );

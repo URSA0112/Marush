@@ -72,7 +72,7 @@ export default function BookingButton({ roomName, roomType, size, price, priceNu
     <div>
       <button
         onClick={() => setOpen(true)}
-        className="mt-5 w-full py-3 text-[0.68rem] tracking-[0.25em] uppercase border border-gold text-gold hover:bg-gold hover:text-charcoal transition-all duration-300"
+        className="mt-5 w-full py-3 text-[0.68rem] tracking-[0.25em] uppercase border border-gold text-gold hover:bg-gold hover:text-charcoal rounded-sm transition-all duration-300"
       >
         {dict.book}
       </button>
@@ -148,7 +148,7 @@ export default function BookingButton({ roomName, roomType, size, price, priceNu
                       </div>
                     </div>
                   )}
-                  <button onClick={handleNext} className="w-full py-3 bg-gold text-charcoal text-xs tracking-[0.25em] uppercase font-medium hover:brightness-110 transition-all">
+                  <button onClick={handleNext} className="w-full py-3 bg-gold text-charcoal text-xs tracking-[0.25em] uppercase font-medium hover:brightness-110 rounded-sm transition-all">
                     {dict.continue}
                   </button>
                 </>
@@ -183,8 +183,8 @@ export default function BookingButton({ roomName, roomType, size, price, priceNu
                   </div>
                   <p className="text-[10px] text-white/30 leading-relaxed">{dict.confirm_note}</p>
                   <div className="flex gap-3 pt-1">
-                    <button onClick={() => setStep(1)} className="flex-1 py-3 border border-white/10 text-white/40 text-xs tracking-widest uppercase hover:border-gold/30 hover:text-white/60 transition-all">{dict.back}</button>
-                    <button onClick={handleNext} className="flex-[2] py-3 bg-gold text-charcoal text-xs tracking-[0.2em] uppercase font-medium hover:brightness-110 transition-all">{dict.confirm}</button>
+                    <button onClick={() => setStep(1)} className="flex-1 py-3 border border-white/10 text-white/40 text-xs tracking-widest uppercase hover:border-gold/30 hover:text-white/60 rounded-sm transition-all">{dict.back}</button>
+                    <button onClick={handleNext} className="flex-[2] py-3 bg-gold text-charcoal text-xs tracking-[0.2em] uppercase font-medium hover:brightness-110 rounded-sm transition-all">{dict.confirm}</button>
                   </div>
                 </>
               )}
@@ -206,7 +206,7 @@ export default function BookingButton({ roomName, roomType, size, price, priceNu
                     <div className="flex justify-between text-xs"><span className="text-white/40">{dict.guests_p}</span><span className="text-white">{form.guests}</span></div>
                     <div className="flex justify-between text-xs"><span className="text-white/40">{dict.confirmation_to}</span><span className="text-white truncate max-w-[55%] text-right">{form.email}</span></div>
                   </div>
-                  <button onClick={handleClose} className="px-10 py-3 border border-gold/50 text-gold text-xs tracking-widest uppercase hover:bg-gold hover:text-charcoal transition-all">{dict.done}</button>
+                  <button onClick={handleClose} className="px-10 py-3 border border-gold/50 text-gold text-xs tracking-widest uppercase hover:bg-gold hover:text-charcoal rounded-sm transition-all">{dict.done}</button>
                 </div>
               )}
             </div>

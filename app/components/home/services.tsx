@@ -8,7 +8,7 @@ function ServiceCard({ title, desc, delay, inView }: { title: string; desc: stri
     <motion.div
       initial={{ opacity: 0, y: 22 }} animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ delay, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-      className="group p-7 border border-gold/12 bg-cream hover:border-gold/30 transition-all duration-300"
+      className="group p-7 border border-gold/12 bg-cream hover:border-gold/30 rounded-sm transition-all duration-300"
     >
       <div className="w-9 h-9 mb-5 flex items-center justify-center border border-gold/25 text-gold text-sm group-hover:border-gold/55 transition-colors">✦</div>
       <h4 className="font-serif text-[1.1rem] font-light text-ink mb-2.5">{title}</h4>

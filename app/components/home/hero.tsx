@@ -64,10 +64,10 @@ export default function Hero({ dict }: { dict: Dict['hero'] }) {
           transition={{ duration: 0.8, delay: 0.95, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <a href="#accommodations" className="px-11 py-4 bg-gold text-black text-[0.68rem] tracking-[0.32em] uppercase font-medium hover:brightness-110 hover:scale-[1.03] hover:shadow-[0_0_32px_rgba(198,164,108,0.45)] transition-all duration-300">
+          <a href="#accommodations" className="px-11 py-4 bg-gold text-black text-[0.68rem] tracking-[0.32em] uppercase font-medium hover:brightness-110 hover:scale-[1.03] hover:shadow-[0_0_32px_rgba(198,164,108,0.45)] rounded-sm transition-all duration-300">
             {dict.cta1}
           </a>
-          <a href="#services" className="px-11 py-4 border border-white/30 text-white/75 text-[0.68rem] tracking-[0.32em] uppercase hover:border-gold hover:text-gold transition-all duration-300">
+          <a href="#services" className="px-11 py-4 border border-white/30 text-white/75 text-[0.68rem] tracking-[0.32em] uppercase hover:border-gold hover:text-gold rounded-sm transition-all duration-300">
             {dict.cta2}
           </a>
         </motion.div>

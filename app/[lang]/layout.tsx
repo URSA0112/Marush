@@ -1,6 +1,7 @@
 import { hasLocale } from './dictionaries'
 import { notFound } from 'next/navigation'
-
+import Navigation from '../components/Navigation/navigation'
+import Footer from '../components/footer'
 export function generateStaticParams() {
   return [{ lang: 'en' }, { lang: 'mn' }]
 }
@@ -14,5 +15,9 @@ export default async function LangLayout({
 }) {
   const { lang } = await params
   if (!hasLocale(lang)) notFound()
-  return <>{children}</>
+  return <>
+      <Navigation lang={lang}/>
+  {children}
+  <Footer/>
+  </>
 }
