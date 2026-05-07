@@ -1,14 +1,20 @@
 'use client';
 import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import type { Dict } from '../../[lang]/dictionaries';
 
 export default function About({ dict }: { dict: Dict['about'] }) {
-  const ref    = useRef(null);
+    const ref = useRef<HTMLElement>(null);
+    const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
   const inView = useInView(ref, { once: true, margin: '-100px' });
+    const opacity  = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
 
   return (
-    <section id="about" ref={ref} className="bg-cream py-32 px-6 md:px-16">
+    <section id="about" ref={ref} className="relative bg-cream py-32 px-6 md:px-16">
+        <motion.div style={{ opacity }} className="absolute bottom-9 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2.5">
+        <span className="text-[0.52rem] tracking-[0.45em] uppercase text-white/50">hello</span>
+        <div className="w-px h-11 bg-gradient-to-b from-gold to-transparent animate-[shimmer_2s_ease-in-out_infinite]" />
+      </motion.div>
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
 
         {/* Images — desktop only */}
