@@ -140,7 +140,7 @@ export default async function CareersPage({ params }: { params: Promise<{ lang: 
             <div className="w-12 h-px bg-gold/50 mx-auto mt-6 mb-6" />
             <p className="text-[0.84rem] text-stone max-w-md mx-auto leading-[1.85]">{careers.apply_body}</p>
           </div>
-          <ApplicationForm positions={positionTitles} dict={careers} />
+          <ApplicationForm positions={positionTitles} />
         </div>
       </section>
     </>
