@@ -6,6 +6,7 @@ import Services from '../components/home/services';
 import Accommodation from '../components/home/accommodations';
 import Location from '../components/home/location';
 import Contact from '../components/home/contact';
+import Devpage from '../devpage';
 
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -14,13 +15,13 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
 
   return (
     <>
-
       <Hero dict={dict.hero} />
       <About dict={dict.about} />
       <Services dict={dict.services} />
       <Accommodation dict={dict.accommodations} lang={lang} />
       <Location dict={dict.location} />
       <Contact dict={dict.contact} />
+      <Devpage/>
     </>
   );
 }

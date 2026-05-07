@@ -13,19 +13,19 @@ export default function LanguageSwitcher({ currentLang }: { currentLang: string 
   };
 
   return (
-    <div className="flex items-center gap-1.5 text-[10px] tracking-[0.12em]">
+    <div className="flex items-center text-[10px] tracking-[0.12em]">
       <button
         onClick={() => switchTo('en')}
         className={`uppercase transition-all duration-200 ${currentLang === 'en' ? 'text-gold' : 'opacity-45 hover:opacity-80'}`}
       >
-        EN
+        EN 
       </button>
       <span className="opacity-20">·</span>
       <button
         onClick={() => switchTo('mn')}
         className={`uppercase transition-all duration-200 ${currentLang === 'mn' ? 'text-gold' : 'opacity-45 hover:opacity-80'}`}
       >
-        МН
+        МН 
       </button>
     </div>
   );

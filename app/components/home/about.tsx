@@ -2,6 +2,7 @@
 import { useRef } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import type { Dict } from '../../[lang]/dictionaries';
+import VerticalGlowLine from '../Reusable/decorLineY';
 
 export default function About({ dict }: { dict: Dict['about'] }) {
     const ref = useRef<HTMLElement>(null);
@@ -11,10 +12,9 @@ export default function About({ dict }: { dict: Dict['about'] }) {
 
   return (
     <section id="about" ref={ref} className="relative bg-cream py-32 px-6 md:px-16">
-        <motion.div style={{ opacity }} className="absolute bottom-9 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2.5">
-        <span className="text-[0.52rem] tracking-[0.45em] uppercase text-white/50">hello</span>
-        <div className="w-px h-11 bg-gradient-to-b from-gold to-transparent animate-[shimmer_2s_ease-in-out_infinite]" />
-      </motion.div>
+    <div className="absolute bottom-5 left-1/2 -translate-x-1/2">
+      <VerticalGlowLine />
+    </div>
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
 
         {/* Images — desktop only */}

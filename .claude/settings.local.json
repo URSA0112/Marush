@@ -4,7 +4,10 @@
       "Bash(npm install *)",
       "Bash(npx tsc *)",
       "Bash(node -e \"const p=require\\('./node_modules/next/package.json'\\); console.log\\(p.version\\)\")",
-      "Bash(Remove-Item -Recurse -Force .next)"
+      "Bash(Remove-Item -Recurse -Force .next)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }
