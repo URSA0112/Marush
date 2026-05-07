@@ -149,6 +149,7 @@ export default function BookingForm() {
     return (
       <div style={styles.page}>
         <div style={styles.confirmCard}>
+
           <div style={styles.confirmBadge}>✦</div>
           <h2 style={styles.confirmTitle}>Reservation Confirmed</h2>
           <p style={styles.confirmSub}>
@@ -187,7 +188,6 @@ export default function BookingForm() {
             Our concierge team will reach out within 24 hours to personalise your stay.
           </p>
         </div>
-        <style>{cssString}</style>
       </div>
     );
   }
@@ -196,7 +196,6 @@ export default function BookingForm() {
 
   return (
     <div style={styles.page}>
-      <style>{cssString}</style>
 
       {/* Header */}
       <div style={styles.header}>
@@ -910,24 +909,3 @@ const styles: Record<string, React.CSSProperties> = {
   },
 };
 
-// ─── CSS (Google Fonts + input focus) ─────────────────────────────────────────
-
-const cssString = `
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
-
-* { box-sizing: border-box; }
-
-input[type="date"]::-webkit-calendar-picker-indicator {
-  filter: invert(0.7) sepia(1) saturate(2) hue-rotate(10deg);
-  cursor: pointer;
-}
-
-input:focus, textarea:focus {
-  border-color: rgba(201,168,76,0.5) !important;
-  box-shadow: 0 0 0 3px rgba(201,168,76,0.08);
-}
-
-button:hover:not(:disabled) {
-  opacity: 0.88;
-}
-`;
