@@ -915,15 +915,6 @@ const styles: Record<string, React.CSSProperties> = {
 const cssString = `
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
 
-:root {
-  --bg: #0d1a0d;
-  --cream: #faf7f0;
-  --gold: #c9a84c;
-  --gold-light: #e8c97a;
-  --stone: #7a8f7a;
-  --green-soft: #7aad7a;
-}
-
 * { box-sizing: border-box; }
 
 input[type="date"]::-webkit-calendar-picker-indicator {

@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation';
 import { hasLocale } from '../dictionaries';
-import Navigation from '../../components/Navigation/navigation';
 import BookingForm from './reservaltion';
 
 

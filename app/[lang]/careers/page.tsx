@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation';
 import { getDictionary, hasLocale } from '../dictionaries';
-import Navigation from '../../components/Navigation/navigation';
 import ApplicationForm from './applicationForm';
 
 export default async function CareersPage({ params }: { params: Promise<{ lang: string }> }) {
