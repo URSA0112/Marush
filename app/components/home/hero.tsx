@@ -112,15 +112,6 @@ export default function Hero({ dict }: { dict: Dict["hero"] }) {
         </span>
         <div className="w-px h-11 bg-gradient-to-b from-gold to-transparent animate-[shimmer_2s_ease-in-out_infinite]" />
       </motion.div>
-      <motion.div
-        style={{ opacity }}
-        className="absolute bottom-9 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2.5"
-      >
-        <span className="text-[0.52rem] tracking-[0.45em] uppercase text-white/50">
-          {dict.scroll}
-        </span>
-        <div className="w-px h-11 bg-gradient-to-b from-gold to-transparent animate-[shimmer_2s_ease-in-out_infinite]" />
-      </motion.div>
     </section>
   );
 }

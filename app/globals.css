@@ -188,19 +188,32 @@ body.marush {
 .m-nav {
   display: flex;
   justify-content: space-between;
-  padding: 22px 40px;
+  align-items: center;
+  padding: 14px 20px;
   border-bottom: var(--rule);
   position: sticky;
   top: 0;
   z-index: 100;
   backdrop-filter: blur(12px);
-  background: color-mix(in oklch, (white) 65%, transparent);
-  border-bottom: var(--rule);
+  background: color-mix(in oklch, var(--cream) 75%, transparent);
+}
+
+@media (min-width: 768px) {
+  .m-nav {
+    padding: 22px 40px;
+  }
 }
 
 .m-nav-links {
-  display: flex;
+  display: none;
   gap: 28px;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .m-nav-links {
+    display: flex;
+  }
 }
 
 .m-nav-link {

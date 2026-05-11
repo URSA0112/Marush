@@ -9,12 +9,12 @@ export default function Location({ dict }: { dict: Dict['location'] }) {
 
   return (
     <section id="location" ref={ref} className="bg-paper py-32 px-6 md:px-16">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
         <motion.div
           initial={{ opacity: 0, x: -32 }} animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="overflow-hidden border border-gold/15 h-[420px] lg:h-[500px]"
+          className="overflow-hidden border border-gold/15 h-[260px] sm:h-[360px] lg:h-[500px]"
         >
           <iframe
             className="w-full h-full border-0"
